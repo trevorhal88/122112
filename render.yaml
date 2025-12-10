@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: rcmp123-backend
+    env: python
+    rootDir: backend
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "uvicorn app:app --host 0.0.0.0 --port $PORT"
+    autoDeploy: true
+
+  - type: static
+    name: rcmp123-frontend
+    rootDir: frontend_dist
+    buildCommand: ""
+    publishDir: frontend_dist
