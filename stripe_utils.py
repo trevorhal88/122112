@@ -16,7 +16,8 @@ def create_checkout(price_cents: int, item_name: str, listing_id: int, buyer_ema
             },
             "quantity": 1
         }],
-        success_url=f"http://127.0.0.1:8000/payment_success?listing_id={listing_id}",
-        cancel_url="http://127.0.0.1:8000/payment_cancel",
+        success_url=f"https://<your-backend-service>.up.railway.app/payment_success?listing_id={listing_id}",
+        cancel_url="https://<your-backend-service>.up.railway.app/payment_cancel",
         metadata={ "listing_id": listing_id }
+
     )
