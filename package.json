@@ -1,5 +1,5 @@
 {
-  "name": "rcmp123-frontend",
+  "name": "rcmp123/rcmp123",
   "version": "1.0.0",
   "scripts": {
     "build": "esbuild frontend/**/*.html --loader:.html=text --outdir=frontend_dist && esbuild frontend/**/*.css --minify --outdir=frontend_dist && esbuild frontend/**/*.js --minify --outdir=frontend_dist"
@@ -7,4 +7,5 @@
   "devDependencies": {
     "esbuild": "^0.20.0"
   }
+
 }
