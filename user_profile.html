@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>User Profile — RCMP123</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+<div class="neon-box">
+  <h2 class="neon-title">My Profile</h2>
+
+  <div id="info" style="text-align:center; margin-bottom:15px;"></div>
+
+  <button class="neon-button" onclick="logout()">Logout</button>
+</div>
+
+<script>
+let user = JSON.parse(localStorage.getItem("user") || "null");
+
+if (!user) {
+  window.location.href = "login.html";
+}
+
+document.getElementById("info").innerHTML =
+  `<strong>Username:</strong> ${user.username}<br>
+   <strong>User ID:</strong> ${user.id}`;
+
+function logout() {
+  localStorage.removeItem("user");
+  window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>
