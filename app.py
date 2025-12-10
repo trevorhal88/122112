@@ -173,8 +173,8 @@ async def create_checkout_session(
                 },
                 "quantity": 1
             }],
-            success_url="http://localhost:8000/payment_success?listing_id={}".format(listing.id),
-            cancel_url="http://localhost:8000/payment_cancel",
+            success_url="https://<your-backend-service>.up.railway.app/payment_success?listing_id={}".format(listing.id),
+            cancel_url="https://<your-backend-service>.up.railway.app/payment_cancel",
             metadata={
                 "listing_id": listing.id
             }
@@ -217,3 +217,4 @@ def payment_success(listing_id: int):
 @app.get("/payment_cancel")
 def payment_cancel():
     return {"status": "canceled", "message": "Payment was canceled."}
+
