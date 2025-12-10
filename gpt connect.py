@@ -1,7 +1,7 @@
 import base64
 import requests
 
-API_BASE = "http://127.0.0.1:8000"
+API_BASE = "https://<your-backend-service>.up.railway.app"
 
 def create_listing_via_gpt(title, description, price, seller_id, image_base64: str):
     image_bytes = base64.b64decode(image_base64)
@@ -18,4 +18,5 @@ def create_listing_via_gpt(title, description, price, seller_id, image_base64: s
 
     r = requests.post(f"{API_BASE}/create_listing", data=data, files=files)
     r.raise_for_status()
+
     return r.json()
